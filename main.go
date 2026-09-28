@@ -10,19 +10,19 @@ func main() {
 
 }
 
-func getExchangeData() (string, string) {
-	var currency string
-	var exchangeCurency string
-
+func getExchangeData() (sum float64, currency, exchangeCurency string) {
 	fmt.Print("Введите валюту: ")
 	fmt.Scan(&currency)
 
 	fmt.Print("Введите валюту перевода: ")
 	fmt.Scan(&exchangeCurency)
 
-	return currency, exchangeCurency
+	fmt.Print("Введите сумму перевода: ")
+	fmt.Scan(&sum)
+
+	return
 }
 
-func convertCurrency(course float64, currency, exchangeCurency string) {
+func convertCurrency(currency, exchangeCurency string) {
 
 }

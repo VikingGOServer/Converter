@@ -7,7 +7,9 @@ const USDToRUB = 84.34
 const EURToRUB = (1 / USDToEUR) * USDToRUB
 
 func main() {
+	sum, currency, exchangeCurency := getExchangeData()
 
+	convertCurrency(sum, currency, exchangeCurency)
 }
 
 func getExchangeData() (sum float64, currency, exchangeCurency string) {
@@ -23,6 +25,6 @@ func getExchangeData() (sum float64, currency, exchangeCurency string) {
 	return
 }
 
-func convertCurrency(currency, exchangeCurency string) {
+func convertCurrency(sum float64, currency, exchangeCurency string) {
 
 }

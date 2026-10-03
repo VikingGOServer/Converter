@@ -22,9 +22,9 @@ func main() {
 func getExchangeData() (count float64, currency, exchangeCurency string) {
 	currency = inputCurrency()
 
-	exchangeCurency = inputExchangeCurrency(currency)
-
 	count = inputCount()
+
+	exchangeCurency = inputExchangeCurrency(currency)
 
 	return
 }
@@ -42,6 +42,9 @@ func inputCurrency() string {
 		if isGetCurrency {
 			return currency
 		} else {
+			fmt.Println()
+			fmt.Println("Неверная валюта, попробуйте снова")
+			fmt.Println()
 			continue
 		}
 	}
@@ -60,6 +63,9 @@ func inputExchangeCurrency(currency string) string {
 		if isGetExchange {
 			return exchangeCurency
 		} else {
+			fmt.Println()
+			fmt.Println("Неверная валюта, попробуйте снова")
+			fmt.Println()
 			continue
 		}
 	}
@@ -76,6 +82,10 @@ func inputCount() float64 {
 		num, err := strconv.ParseFloat(sumStr, 64)
 		if err != nil {
 			continue
+		} else if num <= 0 {
+			fmt.Println()
+			fmt.Println("Сумма должна быть больше 0")
+			fmt.Println()
 		} else {
 			sum = num
 			return sum
